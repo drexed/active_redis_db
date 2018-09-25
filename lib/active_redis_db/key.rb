@@ -51,6 +51,8 @@ class ActiveRedisDB::Key < ActiveRedisDB::Base
       end
     end
 
+    alias_method :expire_in, :expire
+
     def expire_at(key, seconds, format = :seconds)
       normalized_key = normalize_key(key)
 

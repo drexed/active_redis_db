@@ -103,6 +103,16 @@ describe ActiveRedisDB::Key do
     end
   end
 
+  describe '.expire_in' do
+    it 'to be nil' do
+      ActiveRedisDB::String.create(:example, 'hello')
+      ActiveRedisDB::Key.expire_in(:example, 2)
+      sleep(3)
+
+      expect(ActiveRedisDB::String.find(:example)).to eq(nil)
+    end
+  end
+
   describe '.dump' do
     # TODO
   end
