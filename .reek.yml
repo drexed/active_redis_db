@@ -1,0 +1,29 @@
+---
+detectors:
+  Attribute:
+    enabled: false
+  BooleanParameter:
+    enabled: false
+  ClassVariable:
+    enabled: false
+  ControlParameter:
+    enabled: false
+  DataClump:
+    enabled: false
+  DuplicateMethodCall:
+    exclude:
+      - 'Base#metamorph'
+  FeatureEnvy:
+    enabled: false
+  IrresponsibleModule:
+    enabled: false
+  LongParameterList:
+    enabled: false
+  NilCheck:
+    enabled: false
+  RepeatedConditional:
+    enabled: false
+  TooManyMethods:
+    enabled: false
+  TooManyStatements:
+    max_statements: 10
