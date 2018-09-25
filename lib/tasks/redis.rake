@@ -9,7 +9,7 @@ namespace :db do
       total_task_start_time = Time.current
 
       puts '  -> Resetting'
-      ActiveOrm::Redis::Connection.flush
+      ActiveRedisDB::Connection.flush
 
       total_task_elapsed_time = (Time.current - total_task_start_time).round(5)
       puts "== Reset: reset Redis (#{total_task_elapsed_time}s) ".ljust(80, '=')
@@ -22,7 +22,7 @@ namespace :db do
       total_task_start_time = Time.current
 
       puts '  -> Resetting'
-      ActiveOrm::Redis::Connection.flush_all
+      ActiveRedisDB::Connection.flush_all
 
       total_task_elapsed_time = (Time.current - total_task_start_time).round(5)
       puts "== Reset: reset all Redis (#{total_task_elapsed_time}s) ".ljust(80, '=')

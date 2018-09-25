@@ -6,7 +6,7 @@ require 'active_redis_db/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'active_redis_db'
-  spec.version = ActiveOrm::VERSION
+  spec.version = ActiveRedisDB::VERSION
   spec.authors = ['Juan Gomez']
   spec.email = ['j.gomez@drexed.com']
 
@@ -21,9 +21,11 @@ Gem::Specification.new do |spec|
   spec.require_paths = %w[lib]
 
   spec.add_runtime_dependency 'rails'
+  spec.add_runtime_dependency 'redis'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'coveralls'
+  # spec.add_development_dependency 'fakeredis'
   spec.add_development_dependency 'fasterer'
   spec.add_development_dependency 'generator_spec'
   spec.add_development_dependency 'rake'
