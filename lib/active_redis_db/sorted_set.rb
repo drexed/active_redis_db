@@ -84,7 +84,13 @@ class ActiveRedisDB::SortedSet < ActiveRedisDB::Base
     end
 
     def all(key, opts = {})
-      value = client.zrange(normalize_key(key), '-inf', '+inf', opts)
+      value = client.zrange(normalize_key(key), 0, -1, opts)
+      value = metatransform(value)
+      value
+    end
+
+    def all_reverse(key, opts = {})
+      value = client.zrevrange(normalize_key(key), 0, -1, opts)
       value = metatransform(value)
       value
     end

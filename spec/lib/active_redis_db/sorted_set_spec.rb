@@ -428,7 +428,33 @@ describe ActiveRedisDB::SortedSet do
   end
 
   describe '.all' do
-    # TODO
+    it 'to be ["one", "2", "three"]' do
+      ActiveRedisDB::SortedSet.create(:example, 1, 'one', 2, '2', 3, 'three')
+
+      expect(ActiveRedisDB::SortedSet.all(:example)).to eq(%w[one 2 three])
+    end
+
+    it 'to be [["one", 1.0], ["2", 2.0], ["three", 3.0]]' do
+      array = [["one", 1.0], ["2", 2.0], ["three", 3.0]]
+      ActiveRedisDB::SortedSet.create(:example, 1, 'one', 2, '2', 3, 'three')
+
+      expect(ActiveRedisDB::SortedSet.all(:example, with_scores: true)).to eq(array)
+    end
+  end
+
+  describe '.all_reverse' do
+    it 'to be ["three", "2", "one"]' do
+      ActiveRedisDB::SortedSet.create(:example, 1, 'one', 2, '2', 3, 'three')
+
+      expect(ActiveRedisDB::SortedSet.all_reverse(:example)).to eq(%w[three 2 one])
+    end
+
+    it 'to be [["three", 3.0], ["2", 2.0], ["one", 1.0]]' do
+      array = [["three", 3.0], ["2", 2.0], ["one", 1.0]]
+      ActiveRedisDB::SortedSet.create(:example, 1, 'one', 2, '2', 3, 'three')
+
+      expect(ActiveRedisDB::SortedSet.all_reverse(:example, with_scores: true)).to eq(array)
+    end
   end
 
   describe '.position' do
