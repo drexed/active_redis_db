@@ -135,6 +135,10 @@ class ActiveRedisDB::SortedSet < ActiveRedisDB::Base
       client.zincrby(normalize_key(key), count, value)
     end
 
+    def decrement(key, value, count)
+      client.zincrby(normalize_key(key), -(count.abs), value)
+    end
+
     def destroy(key, at)
       client.zrem(normalize_key(key), at)
     end

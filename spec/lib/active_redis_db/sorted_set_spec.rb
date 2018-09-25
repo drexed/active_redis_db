@@ -560,6 +560,15 @@ describe ActiveRedisDB::SortedSet do
     end
   end
 
+  describe '.decrement' do
+    it 'to be -1' do
+      ActiveRedisDB::SortedSet.create(:example, 1, 'one')
+
+      expect(ActiveRedisDB::SortedSet.decrement(:example, 'one', 2)).to eq(-1)
+      expect(ActiveRedisDB::SortedSet.score(:example, 'one')).to eq(-1)
+    end
+  end
+
   describe '.destroy' do
     it 'to be 2' do
       ActiveRedisDB::SortedSet.create(:example, 1, 'one')
