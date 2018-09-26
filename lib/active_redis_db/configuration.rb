@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Style/ClassAndModuleChildren
 begin
   require 'fakeredis'
 rescue LoadError
@@ -31,4 +30,3 @@ module ActiveRedisDB
   end
 
 end
-# rubocop:enable Style/ClassAndModuleChildren
