@@ -26,11 +26,11 @@ Or install it yourself as:
 
 ## Table of Contents
 
-* [Redis](#redis)
+* [Configuration](#configuration)
+* [Usage](#usage)
+* [Rake](#rake)
 
-## Redis
-
-**Configuration:**
+## Configuration
 
 **Options:**
  * client: add a custom Redis client
@@ -46,7 +46,7 @@ if defined?(Redis)
 end
 ```
 
-**Usage:**
+## Usage
 
 **Commands:**
  * Geo
@@ -71,7 +71,7 @@ ActiveRedisDB::List.find(:user_1)            #=> { id: '32123', name: 'James Dea
 ActiveRedisDB::List.evaluate.find(:user_1)   #=> { id: 32123, name: 'James Dean', username: 'alpha123' }
 ```
 
-**Rake:**
+## Rake
 
 **Options:**
  * reset: reset current database
