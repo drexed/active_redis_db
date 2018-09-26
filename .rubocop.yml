@@ -16,6 +16,9 @@ Lint/ScriptPermission:
   Enabled: false
 Metrics/ClassLength:
   Enabled: false
+Naming/FileName:
+  Exclude:
+    - '.irbrc'
 Style/Alias:
   Enabled: false
 Style/ClassAndModuleChildren:
