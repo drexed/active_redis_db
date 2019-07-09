@@ -3,6 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/active_redis_db.svg)](http://badge.fury.io/rb/active_redis_db)
 [![Build Status](https://travis-ci.org/drexed/active_redis_db.svg?branch=master)](https://travis-ci.org/drexed/active_redis_db)
 
+**NOTE** ActiveRedisDB has been deprecated in favor of [Lite::Redis](https://github.com/drexed/lite-redis). Its a near drop-in replacement, so please make the switch as soon as possible.
+
 ActiveRedisDB is a library for object ruby mapping of different databases.
 
 **Supported:**
